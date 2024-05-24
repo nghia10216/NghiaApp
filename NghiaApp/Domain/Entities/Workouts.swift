@@ -20,9 +20,9 @@ struct Workout: Equatable {
 
 struct Assignment: Equatable {
   enum Status: Int {
-    case doing
-    case complete
     case missed
+    case assigned
+    case completed
   }
 
   let id: String

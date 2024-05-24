@@ -76,7 +76,7 @@ extension WorkoutsResponseDTO.WorkoutDTO.AssiginmentDTO {
   func toDomain() -> Assignment {
     .init(
       id: id.unwrapped(or: ""),
-      status: Assignment.Status(rawValue: status).unwrapped(or: .doing),
+      status: Assignment.Status(rawValue: status).unwrapped(or: .assigned),
       client: client,
       title: title,
       exercisesCompleted: exercisesCompleted,
