@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  App
+
+  Created by Oleh Kudinov on 01.12.19.
+  
+*/
+
+"EXCERCISE" = "exercise";
+"EXCERCISES" = "exercises";
+"COMPLETED" = "Completed";
+"MISSED" = "Missed";

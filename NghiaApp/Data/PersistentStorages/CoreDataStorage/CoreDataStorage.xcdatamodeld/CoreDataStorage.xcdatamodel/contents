@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23B81" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="AssignmentResponseEntity" representedClassName="AssignmentResponseEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="day" optional="YES" attributeType="String"/>
+        <attribute name="exercisesCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="isLocalComplete" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="workoutResponse" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutResponseEntity" inverseName="assignments" inverseEntity="WorkoutResponseEntity"/>
+    </entity>
+    <entity name="WorkoutResponseEntity" representedClassName="WorkoutResponseEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="day" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <relationship name="assignments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AssignmentResponseEntity" inverseName="workoutResponse" inverseEntity="AssignmentResponseEntity"/>
+        <relationship name="workoutsResponse" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutsResponseEntity" inverseName="workouts" inverseEntity="WorkoutsResponseEntity"/>
+    </entity>
+    <entity name="WorkoutsRequestEntity" representedClassName="WorkoutsRequestEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="week" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="response" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="WorkoutsResponseEntity" inverseName="request" inverseEntity="WorkoutsResponseEntity"/>
+    </entity>
+    <entity name="WorkoutsResponseEntity" representedClassName="WorkoutsResponseEntity" syncable="YES" codeGenerationType="class">
+        <relationship name="request" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutsRequestEntity" inverseName="response" inverseEntity="WorkoutsRequestEntity"/>
+        <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkoutResponseEntity" inverseName="workoutsResponse" inverseEntity="WorkoutResponseEntity"/>
+    </entity>
+</model>
