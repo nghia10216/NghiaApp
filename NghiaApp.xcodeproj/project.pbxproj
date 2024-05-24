@@ -185,7 +185,7 @@
 		DCEDB0792BFE1752002FD4B1 /* UDHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDHelper.swift; sourceTree = "<group>"; };
 		DCEDB07A2BFE1752002FD4B1 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		DCEDB07B2BFE1752002FD4B1 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		DCEDB0872BFE1FAC002FD4B1 /* GetWorkoutsListUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetWorkoutsListUsecase.swift; path = ../../../../Pictures/GetWorkoutsListUsecase.swift; sourceTree = "<group>"; };
+		DCEDB0872BFE1FAC002FD4B1 /* GetWorkoutsListUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWorkoutsListUsecase.swift; sourceTree = "<group>"; };
 		DCEDB0892BFE205E002FD4B1 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		DCEDB08B2BFE30F2002FD4B1 /* WorkoutsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsRepository.swift; sourceTree = "<group>"; };
 		DCEDB0A62BFE35A5002FD4B1 /* NetworkingLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingLogger.swift; sourceTree = "<group>"; };
