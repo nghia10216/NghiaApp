@@ -67,6 +67,12 @@ class WorkoutsListViewController: BaseViewController {
     let output = viewModel.transform(input: input)
     output.workoutsListSections.drive(tableView.rx.items(dataSource: dataSource))
       .disposed(by: disposeBag)
+
+    output.appError
+      .drive(onNext: { [weak self] appError in
+          self?.showAlert(title: LanguageKey.errorTitle.text, message: appError.actualErrorMessage)
+      })
+      .disposed(by: disposeBag)
   }
 
   // MARK: - Private

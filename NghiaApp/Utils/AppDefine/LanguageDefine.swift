@@ -12,6 +12,7 @@ extension AppDefine {
     case excerscises = "EXCERCISES"
     case completed = "COMPLETED"
     case missed = "MISSED"
+    case errorTitle = "ERORR_TITLE"
 
     var desc: String {
       rawValue
