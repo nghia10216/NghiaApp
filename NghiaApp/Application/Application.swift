@@ -13,9 +13,9 @@ final class Application {
   private init() {}
 
   func configureMainInterface(in window: UIWindow) {
-    let moviesListNavigationController = UINavigationController()
-    let moviesListNavigator = DefaultWorkoutsListNavigator(navigation: moviesListNavigationController)
-    window.rootViewController = moviesListNavigationController
-    moviesListNavigator.toMoviesList()
+    let workoutsListNavigationController = UINavigationController()
+    let workoutsListNavigator = DefaultWorkoutsListNavigator(navigation: workoutsListNavigationController)
+    window.rootViewController = workoutsListNavigationController
+    workoutsListNavigator.toWorkoutsList()
   }
 }

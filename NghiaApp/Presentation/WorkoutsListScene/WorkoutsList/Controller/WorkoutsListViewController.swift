@@ -60,7 +60,7 @@ class WorkoutsListViewController: BaseViewController {
     super.bindingData()
 
     let input = WorkoutsListViewModel.Input(
-      getMoviesListTrigger: .just(()), 
+      getWorkoutsListTrigger: .just(()), 
       assignmentTrigger: assignmentTrigger.asDriverOnErrorJustComplete()
     )
 

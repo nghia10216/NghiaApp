@@ -8,7 +8,7 @@
 import UIKit
 
 protocol WorkoutsListNavigator {
-  func toMoviesList()
+  func toWorkoutsList()
 }
 
 final class DefaultWorkoutsListNavigator: WorkoutsListNavigator {
@@ -18,7 +18,7 @@ final class DefaultWorkoutsListNavigator: WorkoutsListNavigator {
     self.navigation = navigation
   }
 
-  func toMoviesList() {
+  func toWorkoutsList() {
     let vm = WorkoutsListViewModel(navigator: self)
     let vc = WorkoutsListViewController(viewModel: vm)
     navigation.pushViewController(vc, animated: true)

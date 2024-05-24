@@ -81,7 +81,7 @@ extension CoreDataWorkoutsResponseStorage: WorkoutsResponseStorage {
         try context.save()
       } catch {
         // TODO: - Log to Crashlytics
-        debugPrint("CoreDataMoviesResponseStorage Unresolved error \(error), \((error as NSError).userInfo)")
+        debugPrint("CoreDataWorkoutsResponseStorage Unresolved error \(error), \((error as NSError).userInfo)")
       }
     }
   }
@@ -94,7 +94,7 @@ extension CoreDataWorkoutsResponseStorage: WorkoutsResponseStorage {
         requestEntity?.setValue(query.isComplete, forKey: "isLocalComplete")
         try context.save()
       } catch {
-        debugPrint("CoreDataMoviesResponseStorage Unresolved error \(error), \((error as NSError).userInfo)")
+        debugPrint("Update updateAssignment Unresolved error \(error), \((error as NSError).userInfo)")
       }
     }
   }

@@ -14,7 +14,7 @@ final class WorkoutsListViewModel: ViewModel {
   private let navigator: WorkoutsListNavigator
 
   // MARK: Usecases
-  private let getMoviesListUsecase: GetWorkoutsListUsecase
+  private let getWorkoutsListUsecase: GetWorkoutsListUsecase
   private let updateAssignmentUsecase: UpdateAssignmentUsecase
   // MARK: Subjects
   private let workoutsListSections = BehaviorRelay<[WorkoutSection]>(value: [])
@@ -23,7 +23,7 @@ final class WorkoutsListViewModel: ViewModel {
   // MARK: - Initialize
   init(navigator: WorkoutsListNavigator) {
     self.navigator = navigator
-    getMoviesListUsecase = DefaultGetWorkoutsListUsecase()
+    getWorkoutsListUsecase = DefaultGetWorkoutsListUsecase()
     updateAssignmentUsecase = DefaultUpdateAssignmentUsecase()
     super.init()
     setupData()
@@ -34,11 +34,11 @@ final class WorkoutsListViewModel: ViewModel {
     workoutsListSections.accept([WorkoutSection(items: WorkoutItem.currentWorkoutItems(date: date))])
   }
 
-  private func getMoviesList(getMoviesListTrigger: Driver<Void>) {
-    getMoviesListTrigger
+  private func getWorkoutsList(getWorkoutsListTrigger: Driver<Void>) {
+    getWorkoutsListTrigger
       .flatMapLatest { [unowned self] in
         let (year, week) = self.date.yearAndWeek()
-        return self.getMoviesListUsecase.getWorkoutsList(query: .init(week: week, year: year))
+        return self.getWorkoutsListUsecase.getWorkoutsList(query: .init(week: week, year: year))
           .trackActivity(self.activity)
           .asDriverOnErrorJustComplete()
       }
@@ -89,7 +89,7 @@ final class WorkoutsListViewModel: ViewModel {
 extension WorkoutsListViewModel: ViewModelTransformable {
 
   func transform(input: Input) -> Output {
-    getMoviesList(getMoviesListTrigger: input.getMoviesListTrigger)
+    getWorkoutsList(getWorkoutsListTrigger: input.getWorkoutsListTrigger)
     toggleAssignment(assignmentTrigger: input.assignmentTrigger)
     return.init(
       workoutsListSections: workoutsListSections.asDriver(),
@@ -98,7 +98,7 @@ extension WorkoutsListViewModel: ViewModelTransformable {
   }
 
   struct Input {
-    let getMoviesListTrigger: Driver<Void>
+    let getWorkoutsListTrigger: Driver<Void>
     let assignmentTrigger: Driver<(excersiseIndexPath: IndexPath, assignmentIndexPath: IndexPath)>
   }
 
